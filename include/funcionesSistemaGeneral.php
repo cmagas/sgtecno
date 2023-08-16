@@ -192,6 +192,22 @@ function obtenerNombreServicio($id)
     return $valor;
 }
 
+//CAJA CHICA
+function obtenerNombreMovimiento($idTipo)
+{
+    global $con;
+    $valor="";
+    
+    $consulta="SELECT nombre FROM 3002_catTipoIngresosEgresos WHERE idTipo='".$idTipo."'";
+    $res=$con->obtenerValor($consulta);
 
+    if($res)
+    {
+        $valor=strtoupper($res);
+    }
+
+    return $valor;
+
+}
 
 ?>
